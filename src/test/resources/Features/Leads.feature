@@ -8,8 +8,8 @@ Feature: Lead Functionality
   @cl
   Scenario Outline: Create Lead
     When user click on new lead link
-    And fill mandatory fields and click on save button
-    Then Lead should be created successfully
+    And fill mandatory fields lastname "<lname>" and company "<comp>" click on save button
+    Then Lead should be created successfully with "<lname>" and company "<comp>"
     And close browser
 
     Examples:
