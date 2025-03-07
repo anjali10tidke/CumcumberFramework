@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features",
         glue ="com.vtiger.stepsdefination",
         dryRun = false,
-        plugin ={ "pretty", "html:target/cucumber-reports/cucumber_report.html" },
-        tags = "@cl"
+        plugin ={ "pretty", "html:target/cucumber-reports/cucumber_report.html" }
+        //tags = "@cl3"
       )
 public class TestRunner {
 

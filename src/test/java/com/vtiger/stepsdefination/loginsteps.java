@@ -6,21 +6,26 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v131.overlay.model.LineStyle;
 
-public class loginsteps {
+import java.time.Duration;
+import java.util.Collections;
+import java.util.List;
 
-    public WebDriver driver = new ChromeDriver();
+public class loginsteps extends Basesteps {
 
 
     @Given("user should be on login")
     public void user_should_be_on_login() {
+        driver = new ChromeDriver();
         driver.get("http://localhost:100");
         driver.manage().window().maximize();
-
     }
 
     @When("user enters valid credentilas")
     public void user_enters_valid_credentilas() {
+
+      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
         driver.findElement(By.name("user_name")).sendKeys("admin");
         driver.findElement(By.name("user_password")).sendKeys("admin");
         driver.findElement(By.name("Login")).click();
@@ -78,47 +83,6 @@ public class loginsteps {
 
         driver.findElement(By.name("Login")).click();
     }
-
-    @When("user click on new lead link")
-    public void user_click_on_new_lead_link() {
-
-        driver.findElement(By.linkText("New Lead")).click();
-
-    }
-
-    @When("fill mandatory fields and click on save button")
-    public void createlead_with_mandate() {
-
-        driver.findElement(By.name("lastname")).sendKeys("Modi");
-        driver.findElement(By.name("company")).sendKeys("BJP");
-        driver.findElement(By.name("button")).click();
-
-    }
-
-    @Then("Lead should be created successfully")
-    public void lead_should_be_created_successfully() {
-
-        //driver.findElement(By.xpath("//td[text()='Last Name:']/following::td[1]")).getText().equals("modi");
-        driver.findElement(By.xpath("//td[text()='Last Name:']/following::td[text()='modi']")).isDisplayed();
-        driver.findElement(By.xpath("//td[text()='Company:']/following::td[text()='BJP']")).isDisplayed();
-
-    }
-
-    @When("fill mandatory fields lastname {string} and company {string} click on save button")
-    public void fill_mandatory_fields_lastname_and_company_click_on_save_button(String lname, String comp) {
-        driver.findElement(By.name("lastname")).sendKeys(lname);
-        driver.findElement(By.name("company")).sendKeys(comp);
-        driver.findElement(By.name("button")).click();
-
-    }
-    @Then("Lead should be created successfully with {string} and company {string}")
-    public void lead_should_be_created_successfully_with_and_company(String lname, String comp) {
-
-        driver.findElement(By.xpath("//td[text()='Last Name:']/following::td[text()='"+lname+"']")).isDisplayed();
-        driver.findElement(By.xpath("//td[text()='Company:']/following::td[text()='"+comp+"']")).isDisplayed();
-
-    }
-
 
 }
 

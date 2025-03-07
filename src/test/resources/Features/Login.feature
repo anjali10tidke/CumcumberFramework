@@ -9,7 +9,6 @@ Feature: login functionality
     And user can see logout link
     And close browser
 
-    @modi
 
     Scenario: Invalid login
       When user enters the invalid credentilas
@@ -18,7 +17,6 @@ Feature: login functionality
       And close browser
 
 
-  @modi
   Scenario Outline: Invalid login with data driven
     When user enters the invalid credentilas username as "<userid>" and passwprd as "<password>"
     Then user should be on same page
