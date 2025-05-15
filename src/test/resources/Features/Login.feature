@@ -1,22 +1,24 @@
+@tg1
 Feature: login functionality
 
   Background:
     Given user should be on login
 
+    @modi1
   Scenario: valid login
-    When user enters valid credentilas
+    When user enters valid credentials
     Then user should navigated to home page
     And user can see logout link
     And close browser
 
-
+@modi
     Scenario: Invalid login
       When user enters the invalid credentilas
       Then user should be on same page
       And user can see error message
       And close browser
 
-
+@modi
   Scenario Outline: Invalid login with data driven
     When user enters the invalid credentilas username as "<userid>" and passwprd as "<password>"
     Then user should be on same page

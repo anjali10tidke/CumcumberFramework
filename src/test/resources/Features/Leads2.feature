@@ -4,7 +4,7 @@ Feature: Lead2  Functionality
   @cl3
   Scenario: Create Lead step parametreization
     Given user should be on login
-    When user enters valid credentilas
+    When user enters valid credentials
     And user create the lead data with "<lname>" and  "<comp>" and verify sucessful lead creation
       |lname | comp |
       |Shah | BJP |

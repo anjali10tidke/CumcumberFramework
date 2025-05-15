@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue ="com.vtiger.stepsdefination",
         dryRun = false,
         plugin ={ "pretty", "html:target/cucumber-reports/cucumber_report.html" }
-        //tags = "@cl3"
+        ,tags = "@cl3"
       )
 public class TestRunner {
 

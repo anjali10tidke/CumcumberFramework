@@ -3,9 +3,9 @@ Feature: Lead Functionality
 
     Background:
       Given user should be on login
-      When user enters valid credentilas
+      When user enters valid credentials
 
-  @cl
+
   Scenario Outline: Create Lead
     When user click on new lead link
     And fill mandatory fields lastname "<lname>" and company "<comp>" click on save button
